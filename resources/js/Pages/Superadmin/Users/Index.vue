@@ -9,6 +9,7 @@ import SearchBarWithOptions from "@/Components/SearchBars/SearchBarWithOptions.v
 import { onMounted, ref, watch } from "vue";
 import Breadcrumbs from "@/Components/Breadcrumbs/Breadcrumbs.vue";
 import InputError from "@/Components/Forms/InputError.vue";
+import { parseISO, format } from "date-fns";
 
 import {
     RadioGroup,
@@ -499,6 +500,12 @@ onMounted(() => {
                             <th scope="col" class="myPrimaryTableTh">
                                 Superadmin role
                             </th>
+                            <th scope="col" class="myPrimaryTableTh">
+                                Created at
+                            </th>
+                            <th scope="col" class="myPrimaryTableTh">
+                                Updated at
+                            </th>
                             <th scope="col" class="myPrimaryTableTh">Edit</th>
                             <th scope="col" class="myPrimaryTableTh">Delete</th>
                         </tr>
@@ -648,6 +655,24 @@ onMounted(() => {
                                         </button>
                                     </template>
                                 </td>
+                                <td class="myPrimaryTableTBodyTd">
+                                    {{
+                                        format(
+                                            parseISO(user.created_at),
+                                            "dd/MM/yyyy"
+                                        )
+                                    }}
+                                </td>
+
+                                <td class="myPrimaryTableTBodyTd">
+                                    {{
+                                        format(
+                                            parseISO(user.updated_at),
+                                            "dd/MM/yyyy"
+                                        )
+                                    }}
+                                </td>
+
                                 <td class="myPrimaryTableTBodyTd">
                                     <button
                                         @click="

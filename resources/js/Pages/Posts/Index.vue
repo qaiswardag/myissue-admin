@@ -267,7 +267,6 @@ onMounted(() => {
                                 Thumbnail
                             </th>
                             <th scope="col" class="myPrimaryTableTh">Title</th>
-                            <th scope="col" class="myPrimaryTableTh">Trash</th>
                             <th scope="col" class="myPrimaryTableTh">Status</th>
                             <th scope="col" class="myPrimaryTableTh">
                                 Show Authors
@@ -350,17 +349,6 @@ onMounted(() => {
                                     </Link>
                                 </td>
 
-                                <td class="myPrimaryTableTBodyTd">
-                                    <span
-                                        :class="
-                                            post.trash
-                                                ? 'bg-red-100 text-myPrimaryErrorColor'
-                                                : 'bg-green-50 text-myPrimaryLinkColor'
-                                        "
-                                        class="inline-flex rounded-full px-2 font-medium leading-5 text-green-800"
-                                        >{{ post.trash ? "Deleted" : "" }}
-                                    </span>
-                                </td>
                                 <td class="myPrimaryTableTBodyTd">
                                     <span
                                         :class="
