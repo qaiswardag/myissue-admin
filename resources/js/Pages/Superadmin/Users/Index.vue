@@ -518,7 +518,7 @@ onMounted(() => {
                                 :key="user.id"
                             >
                                 <td class="myPrimaryTableTBodyTd">
-                                    <div class="flex items-center gap-2 mt-2">
+                                    <div class="flex items-center gap-2">
                                         <div
                                             v-if="
                                                 user && user.profile_photo_path

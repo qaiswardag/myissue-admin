@@ -33,7 +33,7 @@ class PostFactory extends Factory
             "team_id" => $randomUserFromTeam->id,
             "user_id" => $randomUserFromTeam->user_id,
             "show_author" => rand(0, 1),
-            "deleted_at" => $deletedAt,
+            "deleted_at" => null,
             "title" => $title,
             "slug" => $slug,
             "content" => $this->faker->sentence(rand(20, 60), false),

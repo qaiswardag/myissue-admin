@@ -619,7 +619,7 @@ const displayAbleRole = (role) => {
                                                     class="myPrimaryTableTBodyTd"
                                                 >
                                                     <div
-                                                        class="flex items-center gap-2 mt-2"
+                                                        class="flex items-center gap-2"
                                                     >
                                                         <div
                                                             v-if="

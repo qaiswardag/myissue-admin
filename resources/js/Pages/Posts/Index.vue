@@ -397,7 +397,7 @@ onMounted(() => {
                                 <td class="myPrimaryTableTBodyTd">
                                     <div
                                         v-if="post.updatedBy !== null"
-                                        class="flex items-center gap-2 mt-2"
+                                        class="flex items-center gap-2"
                                     >
                                         <!-- user photo - start -->
 

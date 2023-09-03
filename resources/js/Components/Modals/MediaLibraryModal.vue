@@ -16,9 +16,25 @@ import { useForm } from "@inertiajs/vue3";
 import SubmitButton from "@/Components/Buttons/SubmitButton.vue";
 import InputLabel from "@/Components/Forms/InputLabel.vue";
 import { useStore } from "vuex";
+import DynamicModal from "@/Components/Modals/DynamicModal.vue";
 
 // store
 const store = useStore();
+
+const modalShowDeleteImage = ref(false);
+
+// modal content
+const typeModal = ref("");
+const gridColumnModal = ref(Number(1));
+const titleModal = ref("");
+const descriptionModal = ref("");
+const firstButtonModal = ref("");
+const secondButtonModal = ref(null);
+const thirdButtonModal = ref(null);
+// set dynamic modal handle functions
+const firstModalButtonFunction = ref(null);
+const secondModalButtonFunction = ref(null);
+const thirdModalButtonFunction = ref(null);
 
 const getCurrentImage = computed(() => {
     return store.getters["mediaLibrary/getCurrentImage"];
@@ -153,9 +169,33 @@ const handleImageUpdate = function (imageId) {
 };
 
 const handleDeleteImage = function (imageId) {
+    modalShowDeleteImage.value = true;
+    // set modal standards
+    typeModal.value = "delete";
+    gridColumnModal.value = 3;
+    titleModal.value = `Delete Image`;
+    descriptionModal.value = `Are you sure you want to delete this image?`;
+    firstButtonModal.value = "Close";
+    secondButtonModal.value = null;
+    thirdButtonModal.value = "Delete Image";
+
+    // handle click
+    firstModalButtonFunction.value = function () {
+        // handle show modal for unique content
+        modalShowDeleteImage.value = false;
+    };
+
+    // handle click
+    thirdModalButtonFunction.value = function () {
+        modalShowDeleteImage.value = false;
+
+        deleteImage(imageId);
+    };
+};
+
+const deleteImage = function (imageId) {
     // search query
     search_query.value = getCurrentMedia.value?.fetchedMedia?.search_query;
-    // let page = getCurrentMedia.value.fetchedMedia.current_clicked_page;
     let currentClickedPage =
         getCurrentMedia.value?.fetchedMedia?.current_clicked_page;
     // set image id
@@ -225,6 +265,30 @@ const handleDeleteImage = function (imageId) {
                             <div
                                 class="flex gap-2 justify-between items-center border-b border-gray-200 pb-2 mb-2"
                             >
+                                <DynamicModal
+                                    :show="modalShowDeleteImage"
+                                    :type="typeModal"
+                                    :disabled="formDeleteImage.processing"
+                                    disabledWhichButton="thirdButton"
+                                    :gridColumnAmount="gridColumnModal"
+                                    :title="titleModal"
+                                    :description="descriptionModal"
+                                    :firstButtonText="firstButtonModal"
+                                    :secondButtonText="secondButtonModal"
+                                    :thirdButtonText="thirdButtonModal"
+                                    @firstModalButtonFunction="
+                                        firstModalButtonFunction
+                                    "
+                                    @secondModalButtonFunction="
+                                        secondModalButtonFunction
+                                    "
+                                    @thirdModalButtonFunction="
+                                        thirdModalButtonFunction
+                                    "
+                                >
+                                    <header></header>
+                                    <main></main>
+                                </DynamicModal>
                                 <DialogTitle
                                     as="h3"
                                     class="tertiaryHeader my-0 py-0"
