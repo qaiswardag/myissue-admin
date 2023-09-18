@@ -89,7 +89,7 @@ const switchTeam = function (team) {
                         $page.props.jetstream.hasTeamFeatures
                     "
                 >
-                    No Team Selected. Select a Team.
+                    No Team selected. Select a Team.
                     <br />
                 </template>
 

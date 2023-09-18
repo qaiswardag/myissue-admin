@@ -171,7 +171,7 @@ const actions = [
                         actionIdx === 1 ? '' : '',
                         actionIdx === actions.length - 2 ? '' : '',
                         actionIdx === actions.length - 1 ? '' : '',
-                        'relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-myPrimaryBrandColor',
+                        'relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-myPrimaryBrandColor cursor-pointer',
                     ]"
                 >
                     <div>

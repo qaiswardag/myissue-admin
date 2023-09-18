@@ -355,7 +355,7 @@ const posts = [
                                 {{
                                     format(
                                         parseISO("2023-06-03 21:10:29"),
-                                        "dd/MM/yyyy"
+                                        "dd/MM/yyyy HH:mm"
                                     )
                                 }}
                             </p>

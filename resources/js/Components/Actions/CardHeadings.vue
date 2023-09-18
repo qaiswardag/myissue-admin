@@ -4,6 +4,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
 import { router } from "@inertiajs/vue3";
 import DropdownLink from "@/Components/Dropdowns/DropdownLink.vue";
 import {
+    ArrowLongRightIcon,
     CodeBracketIcon,
     EllipsisVerticalIcon,
     FlagIcon,
@@ -84,25 +85,10 @@ defineProps({
                                         "
                                     >
                                         <div class="flex gap-2 items-center">
-                                            <p>
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke-width="1.5"
-                                                    stroke="currentColor"
-                                                    class="w-4 h-4"
-                                                >
-                                                    <path
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                                                    />
-                                                </svg>
-                                            </p>
-                                            <p>
-                                                {{ routeItem.label }}
-                                            </p>
+                                            <ArrowLongRightIcon
+                                                class="w-4 h-4"
+                                            ></ArrowLongRightIcon>
+                                            <p>{{ routeItem.label }}</p>
                                         </div>
                                     </DropdownLink>
                                 </div>

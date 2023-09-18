@@ -336,7 +336,7 @@ const notificationsModalButton = function () {
                     class="myInputGroup flex myPrimaryGap flex-row-reverse justify-end"
                 >
                     <InputLabel
-                        :value="form.public ? 'Public' : 'Private'"
+                        :value="form.public ? 'Published' : 'Unpublished'"
                         :class="{
                             'text-myPrimaryLinkColor': form.public,
                             'text-myPrimaryErrorColor': !form.public,

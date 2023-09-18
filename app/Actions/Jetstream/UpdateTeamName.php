@@ -30,29 +30,29 @@ class UpdateTeamName implements UpdatesTeamNames
                 "string",
                 "max:255",
             ],
-            "cover_image_thumbnail" => [
-                "required",
-                "nullable",
-                "string",
-                "max:255",
-            ],
-            "cover_image_medium" => [
-                "required",
-                "nullable",
-                "string",
-                "max:255",
-            ],
-            "cover_image_large" => [
-                "required",
-                "nullable",
-                "string",
-                "max:255",
-            ],
+            // "cover_image_thumbnail" => [
+            //     "required",
+            //     "nullable",
+            //     "string",
+            //     "max:255",
+            // ],
+            // "cover_image_medium" => [
+            //     "required",
+            //     "nullable",
+            //     "string",
+            //     "max:255",
+            // ],
+            // "cover_image_large" => [
+            //     "required",
+            //     "nullable",
+            //     "string",
+            //     "max:255",
+            // ],
 
             "logo_original" => ["required", "nullable", "string", "max:255"],
-            "logo_thumbnail" => ["required", "nullable", "string", "max:255"],
-            "logo_medium" => ["required", "nullable", "string", "max:255"],
-            "logo_large" => ["required", "nullable", "string", "max:255"],
+            // "logo_thumbnail" => ["required", "nullable", "string", "max:255"],
+            // "logo_medium" => ["required", "nullable", "string", "max:255"],
+            // "logo_large" => ["required", "nullable", "string", "max:255"],
         ]);
 
         // if validator fails

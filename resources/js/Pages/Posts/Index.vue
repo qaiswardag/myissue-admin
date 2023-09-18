@@ -330,7 +330,9 @@ onMounted(() => {
                                     </div>
                                 </td>
 
-                                <td class="myPrimaryTableTBodyTd">
+                                <td
+                                    class="myPrimaryTableTBodyTd myPrimaryResourceTableBodyTdTitle"
+                                >
                                     <Link
                                         :href="
                                             route('team.posts.post.show', [
@@ -341,9 +343,7 @@ onMounted(() => {
                                             ])
                                         "
                                     >
-                                        <span
-                                            class="text-myPrimaryLinkColor font-medium"
-                                        >
+                                        <span class="text-myPrimaryLinkColor">
                                             {{ post.title }}
                                         </span>
                                     </Link>
@@ -360,7 +360,7 @@ onMounted(() => {
                                         >{{
                                             post.published
                                                 ? "Published"
-                                                : "Private"
+                                                : "Unpublished"
                                         }}</span
                                     >
                                 </td>
@@ -460,7 +460,7 @@ onMounted(() => {
                                     {{
                                         format(
                                             parseISO(post.updated_at),
-                                            "dd/MM/yyyy"
+                                            "dd/MM/yyyy HH:mm"
                                         )
                                     }}
                                 </td>
@@ -468,7 +468,7 @@ onMounted(() => {
                                     {{
                                         format(
                                             parseISO(post.created_at),
-                                            "dd/MM/yyyy"
+                                            "dd/MM/yyyy HH:mm"
                                         )
                                     }}
                                 </td>

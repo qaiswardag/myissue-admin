@@ -342,10 +342,10 @@ class PostController extends Controller
                 $updatedAuthorIds[] = $authorId;
 
                 // Update or create the record in the AuthorPost table
-                AuthorPost::updateOrCreate(
-                    ["user_id" => $authorId, "post_id" => $postId],
-                    ["user_id" => $authorId, "post_id" => $postId]
-                );
+                AuthorPost::updateOrCreate([
+                    "user_id" => $authorId,
+                    "post_id" => $postId,
+                ]);
             }
 
             // Delete the AuthorPost records that are not present in the request

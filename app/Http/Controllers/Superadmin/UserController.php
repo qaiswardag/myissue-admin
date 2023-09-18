@@ -36,6 +36,11 @@ class UserController extends Controller
             $selectedCategory = $request->input("selected_category");
 
             if ($selectedCategory === "id") {
+                // Check if search_query is null or empty and selected_category is ID
+                if ($searchQuery === null || trim($searchQuery) === "") {
+                    // No search query provided, show all results
+                    return;
+                }
                 // Convert $searchQuery to an array of IDs using the explode function
                 $idArray = explode(",", $searchQuery);
                 // filter by user ID

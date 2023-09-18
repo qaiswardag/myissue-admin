@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { Link, router, useForm } from "@inertiajs/vue3";
 import ActionMessage from "@/Components/Actions/ActionMessage.vue";
 import FormSection from "@/Components/Forms/FormSection.vue";
@@ -46,6 +46,8 @@ const verificationLinkSent = ref(null);
 const photoPreview = ref(null);
 const photoInput = ref(null);
 
+const profilePhotoIsDirty = ref(false);
+
 const updateProfileInformation = () => {
     if (photoInput.value) {
         form.photo = photoInput.value.files[0];
@@ -55,6 +57,7 @@ const updateProfileInformation = () => {
         preserveScroll: true,
         onSuccess: () => {
             clearPhotoFileInput();
+            profilePhotoIsDirty.value = false;
         },
         onError: (err) => {},
         onFinish: () => {},
@@ -123,6 +126,10 @@ const clearPhotoFileInput = () => {
         photoInput.value.value = null;
     }
 };
+
+watch(photoPreview, (newValue) => {
+    profilePhotoIsDirty.value = true;
+});
 </script>
 
 <template>
@@ -327,7 +334,36 @@ const clearPhotoFileInput = () => {
                         </button>
                     </div>
 
+                    <br />
                     <InputError :message="form.errors.photo" />
+                    <div
+                        v-if="profilePhotoIsDirty === true"
+                        class="rounded-md bg-red-50 p-4 shadow-lg"
+                    >
+                        <div class="flex items-center">
+                            <div class="ml-3">
+                                <p
+                                    class="text-sm font-normal text-red-800 pr-4"
+                                >
+                                    Image and form not saved.
+                                    <span
+                                        @click="updateProfileInformation"
+                                        class="cursor-pointer myPrimaryLink font-medium italic"
+                                    >
+                                        Save image.
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="ml-auto pl-3">
+                                <div class="-mx-1.5 -my-1.5">
+                                    <button
+                                        type="button"
+                                        class="inline-flex rounded-md bg-red-50 p-1.5 text-red-500 hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-green-50"
+                                    ></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </template>

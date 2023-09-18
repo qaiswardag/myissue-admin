@@ -395,7 +395,6 @@ const clearForm = function () {
     postForm.author = [];
 
     localStorage.removeItem(pathLocalStorage);
-    console.log(localStorage.getItem(pathLocalStorage));
 };
 
 // is form dirty? returns true or false
@@ -641,7 +640,9 @@ onBeforeMount(() => {
                     class="myInputGroup flex myPrimaryGap flex-row-reverse justify-end"
                 >
                     <InputLabel
-                        :value="postForm.published ? 'Published' : 'Private'"
+                        :value="
+                            postForm.published ? 'Published' : 'Unpublished'
+                        "
                         :class="{
                             'text-myPrimaryLinkColor': postForm.published,
                             'text-myPrimaryErrorColor': !postForm.published,

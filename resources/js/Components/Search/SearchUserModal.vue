@@ -327,7 +327,7 @@ onMounted(() => {
                                             class="flex justify-between items-center w-full"
                                         >
                                             <div
-                                                class="flex items-center gap-2 my-2"
+                                                class="flex items-center gap-4 my-2"
                                             >
                                                 <!-- start photo -->
                                                 <div

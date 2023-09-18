@@ -158,7 +158,7 @@ onMounted(() => {
                                 class="p-2 rounded-md min-h-[2rem] max-h-[6rem] flex flex-col w-full border border-myPrimaryLightGrayColor divide-y divide-gray-200 bg-white hover:border-myPrimaryMediumGrayColor"
                             >
                                 <!-- start photo -->
-                                <div class="flex items-center gap-2 my-2">
+                                <div class="flex items-center gap-4 my-2">
                                     <div
                                         v-if="
                                             member &&
@@ -352,7 +352,7 @@ onMounted(() => {
                                         {{
                                             format(
                                                 parseISO(post.updated_at),
-                                                "dd/MM/yyyy"
+                                                "dd/MM/yyyy HH:mm"
                                             )
                                         }}
                                     </p>

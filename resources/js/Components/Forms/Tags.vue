@@ -26,7 +26,6 @@ const regexSpecialCharacters = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
 
 // handle input
 const handleInput = function () {
-    console.log("handle input inside ran");
     // error
     error.value = null;
     // spaces are not allowed
