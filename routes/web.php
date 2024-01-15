@@ -36,21 +36,6 @@ use Laravel\Jetstream\Jetstream;
 */
 
 Route::get("/", function () {
-    // dd(config()->all());
-    // dd(env("APP_URL"), env("ASSET_URL"), env("APP_NAME"));
-
-    //
-    //
-    // dd([
-    //     "FILESYSTEM_DRIVER" => env("FILESYSTEM_DRIVER"),
-    //     "SPACES_KEY" => env("SPACES_KEY"),
-    //     "SPACES_SECRET" => env("SPACES_SECRET"),
-    //     "SPACES_REGION" => env("SPACES_REGION"),
-    //     "SPACES_BUCKET" => env("SPACES_BUCKET"),
-    //     "SPACES_ENDPOINT" => env("SPACES_ENDPOINT"),
-    // ]);
-    //
-    //
     return Inertia::render("Home/Home", [
         "canLogin" => Route::has("login"),
         "canRegister" => Route::has("register"),
@@ -227,9 +212,4 @@ Route::middleware([
         SuperadminManageRoles::class,
         "destroy",
     ])->name("admin.users.user.remove.superadmin");
-});
-
-// Pages for test
-Route::get("/test-me", function () {
-    return Team::findOrFail(5);
 });
