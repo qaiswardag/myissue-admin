@@ -14,7 +14,7 @@ I have several years of experience in design and development and have worked on 
 
 This app was born out of my desire to make a minimalst Admin Panel with a elegant and intuitive design.
 
-[Play around with the demo app](https://www.admin-theme.myissue.io)
+[Play around with the demo app](https://www.demo.myissue.dk)
 
 ## Technologies and Frameworks
 
